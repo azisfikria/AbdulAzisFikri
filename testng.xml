@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/ABDUL AZIS/Documents/BootCamp SQA 6/AbdulAzisFikri/src/test">
+        <classes>
+            <class name="com.juaracoding.tesng.ujiandua.TestAccount">
+                <methods>
+                    <include name="testInsert"/>
+                    <include name="testDeposit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <parameter name="acc_no" value="1234"/>
+    <parameter name="name" value="Azis"/>
+    <parameter name="amount" value="1,000,000"/>
+    <parameter name="amt" value="2,000"/>
+</suite>
