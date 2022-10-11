@@ -32,7 +32,7 @@ public class TestAccount {
     @Test
     @Parameters({"amt"})
     public void testDeposit(double amt){
-        account.deposit(amt);
+        account.deposit(2000);
 
         double expectedAmt = 2000;
         Assert.assertEquals(amt, expectedAmt);
@@ -46,16 +46,17 @@ public class TestAccount {
 
     @Test
     @Parameters({"amount"})
-    public void testCheckBalance(){
+    public void testCheckBalance(double amount){
 
         account.checkBalance();
     }
 
     @Test
     @Parameters({"acc_no", "name", "amount"})
-    public void testDisplay(){
-
+    public void testDisplay(int acc_no, String name, double amount){
+        account.insert(acc_no, name, amount);
         account.display();
+
     }
 
 }
