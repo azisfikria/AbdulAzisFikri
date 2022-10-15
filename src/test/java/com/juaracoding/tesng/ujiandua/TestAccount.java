@@ -39,16 +39,19 @@ public class TestAccount {
     }
 
     @Test
-    @Parameters({"amt"})
-    public void testWithdraw(double amt){
+    @Parameters({"amount", "amt"})
+    public void testWithdraw(double amount, double amt){
         account.withdraw(amt);
+        double expectedAmt = amount - amt;
+        Assert.assertEquals(amt,expectedAmt);
     }
 
     @Test
     @Parameters({"amount"})
     public void testCheckBalance(double amount){
-
         account.checkBalance();
+        double expectedBalance = amount;
+        Assert.assertEquals(amount, expectedBalance);
     }
 
     @Test
@@ -56,7 +59,15 @@ public class TestAccount {
     public void testDisplay(int acc_no, String name, double amount){
         account.insert(acc_no, name, amount);
         account.display();
-
+        int actualAcc = acc_no;
+        int expetedAcc = acc_no;
+        String actualName = name;
+        String expectedName = name;
+        double actualAmount = amount;
+        double expectedAmount = amount;
+        Assert.assertEquals(actualAcc, expetedAcc);
+        Assert.assertEquals(actualName, expectedName);
+        Assert.assertEquals(actualAmount, expectedAmount);
     }
 
 }
